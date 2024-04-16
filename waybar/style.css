@@ -1,0 +1,192 @@
+@import 'mocha.css';
+@keyframes blink-warning {
+    70% {
+        color: white;
+    }
+    
+    to {
+        color: white;
+        background-color: @warning_color;
+    }
+}
+
+@keyframes blink-critical {
+    70% {
+      color: @wm_icon_bg;
+    }
+
+    to {
+        color: @wm_icon_bg;
+        background-color: @error_color;
+    }
+}
+
+/* Reset all styles */
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* The whole bar */
+#waybar {
+    background: @base;
+    color: @text;
+    font-family: Cantarell, Noto Sans, sans-serif;
+    font-size: 12px;
+    border-bottom: 3px solid @mauve;
+}
+
+#window {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    /* To compensate for the top border and still have vertical centering */
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: @text; 
+}
+
+#workspaces button.focused {
+    border-top: 3px solid @red;
+    background: @mantle;
+    border-bottom: 3px solid  @mauve;
+}
+
+#workspaces button.urgent {
+    border-color: red;
+    color: red;
+}
+
+#mode {
+    background: @mauve;
+}
+
+#custom-clock,
+#custom-menu,
+#custom-playerctl,
+#battery,
+#cpu,
+#language,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#tray,
+#mode,
+#idle_inhibitor {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 4px;
+}
+
+#custom-clock {
+    border-bottom: 3px solid @mauve;
+}
+
+#custom-menu {
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: @base;
+}
+
+#custom-playerctl {
+    border-bottom: 3px solid @theme_selected_bg_color;
+}
+
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    border-bottom: 3px solid @mauve;
+}
+
+#battery.warning {
+    color: @red;
+}
+
+#battery.critical {
+    color: @red;
+}
+
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    border-bottom: 3px solid @mauve;
+}
+
+#language {
+    border-bottom: 3px solid @mauve;
+}
+
+#memory {
+    border-bottom: 3px solid @mauve;
+}
+
+#custom-gpu-usage {
+    border-bottom: 3px solid @mauve;
+}
+
+#network {
+    border-bottom: 3px solid @mauve;
+}
+
+#network.disconnected {
+    border-bottom: 3px solid @crust;
+}
+
+#pulseaudio {
+    border-bottom: 3px solid @mauve;
+}
+
+#pulseaudio.muted {
+    border-bottom: 3px solid @crust;
+}
+
+#temperature {
+    border-bottom: 3px solid @mauve;
+}
+
+#temperature.critical {
+    background-color: @red;
+}
+
+#custom-wf-recorder {
+    color: @red;
+    padding-right: 10px;
+}
+
+#tray {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#idle_inhibitor {
+    background-color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
