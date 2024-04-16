@@ -1,1 +1,1 @@
-![screen] (https://github.com/FoxFot/dots/blob/main/screenshot.png)
+<img src=https://github.com/FoxFot/dots/blob/main/screenshot.png>
